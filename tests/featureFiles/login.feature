@@ -1,4 +1,4 @@
-Feature: Login Functionality
+Feature: Verify Login Functionality
 
   Scenario Outline: User should try to  log in with differnet credentials
 
