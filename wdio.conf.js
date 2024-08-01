@@ -1,3 +1,4 @@
+import allure from 'allure-commandline';
 
 export const config = {
     //
@@ -168,7 +169,10 @@ export const config = {
     reporters: [
         'spec',
             ['allure', 
-                {outputDir: 'allure-results'}]],
+                { outputDir: 'allure-results',
+                  disableWebdriverStepsReporting: true,
+                  disableWebdriverScreenshotsReporting: true,
+                }]],
 
 
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -213,8 +217,9 @@ export const config = {
      * @param {object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+      removeSync(`${process.cwd()}/allure-result`)
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialize specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -300,6 +305,11 @@ export const config = {
      */
     // afterStep: function (step, scenario, result, context) {
     // },
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
+      if (error) {
+        await browser.takeScreenshot();
+      }
+    },
     /**
      *
      * Runs after a Cucumber Scenario.
@@ -355,8 +365,26 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function() {
+      const reportError = new Error('Could not generate Allure report')
+      const generation = allure(['generate', `${process.cwd}/allure-results`, '--clean'])
+      return new Promise((resolve, reject) => {
+          const generationTimeout = setTimeout(
+              () => reject(reportError),
+              5000)
+
+          generation.on('exit', function(exitCode) {
+              clearTimeout(generationTimeout)
+
+              if (exitCode !== 0) {
+                  return reject(reportError)
+              }
+
+              console.log('Allure report successfully generated')
+              resolve()
+          })
+      })
+  },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
