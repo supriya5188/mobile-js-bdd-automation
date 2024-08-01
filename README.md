@@ -15,6 +15,9 @@
 5. After execution "allure-results" folder will genrate and user can see failed test case screenshot 
 
 ### Report
-1. Allure report are added to see failed test case screen short.
-2. On browserstack afetr execution vedio will be genrate  and we can dowonload
-3. specs report is also added to see report on consloe
+1. Allure report are added to see test case execution results.
+2. to see report 
+   2.1. Open index.html file in "allure-report" folder
+   2.2. run command: npx allure serve allure-results
+4. On browserstack afetr execution vedio will be genrate  and we can dowonload
+5. specs report is also added to see report on console
