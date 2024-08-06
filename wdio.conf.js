@@ -1,4 +1,8 @@
 import allure from 'allure-commandline';
+import pkg from 'fs-extra';
+const { removeSync } = pkg;
+
+
 
 export const config = {
     //
@@ -218,7 +222,8 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
-      removeSync(`${process.cwd()}/allure-result`)
+      removeSync(`${process.cwd()}/allure-result`);
+      removeSync(`${process.cwd()}/allure-report`);
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialize specific service
