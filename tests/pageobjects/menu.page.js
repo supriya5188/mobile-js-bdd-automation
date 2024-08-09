@@ -4,6 +4,7 @@ import { WAIT_TIMEOUT } from '../helpers/Constants.js';
 const MENU_TAB = '~open menu';
 const MENU_LOGIN_OPTION = '~menu item log in';
 const MENU_LOGOUT_OPTION = '~menu item log out'
+const SROLL_ELE = '//android.widget.LinearLayout'
 
 class menuPage {    
     get menuTab (){
@@ -16,6 +17,10 @@ class menuPage {
     
     get menuLogoutOption () {
         return $(MENU_LOGOUT_OPTION);
+    }
+
+    get scrollEle() {
+        return $(SROLL_ELE);
     }
 
     /**
@@ -67,6 +72,7 @@ class menuPage {
             return false;
             }
     }
+    
 }
     
     export default new menuPage();

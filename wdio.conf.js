@@ -80,7 +80,6 @@ export const config = {
             platformName: 'android',
             interactiveDebugging: true
             }
-        
     }],
 
     //
@@ -134,7 +133,7 @@ export const config = {
         'browserstack',
         {
           accessibility: true,
-          app: 'bs://12472953004415db21333ab45f1006a4f3544620',
+          app: 'bs://9dd37d20f3d3ea18a98612c46f76cc117722790a',
           //buildIdentifier: "${BUILD_NUMBER}",
           browserstackLocal: true,
           accessibilityOptions: {
@@ -222,7 +221,7 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
-      removeSync(`${process.cwd()}/allure-result`);
+      removeSync(`${process.cwd()}/allure-results`);
       removeSync(`${process.cwd()}/allure-report`);
     },
     /**
@@ -370,7 +369,8 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function() {
+    onComplete: function () {
+      console.log('onComplete hook is being executed');
       const reportError = new Error('Could not generate Allure report')
       const generation = allure(['generate', `${process.cwd}/allure-results`, '--clean'])
       return new Promise((resolve, reject) => {

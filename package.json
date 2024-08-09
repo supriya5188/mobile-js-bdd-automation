@@ -8,13 +8,15 @@
     "@wdio/cucumber-framework": "^8.39.0",
     "@wdio/local-runner": "^8.39.1",
     "@wdio/spec-reporter": "^8.39.0",
+    "allure-cucumberjs": "^3.0.0-beta.9",
     "appium-uiautomator2-driver": "^3.7.4",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "wdio-wait-for": "^3.0.11"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "report": "allure serve allure-results"
   },
   "dependencies": {
     "allure-commandline": "^2.29.0",

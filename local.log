@@ -1,14 +1,9 @@
 "" 
 
-Tue Aug 06 2024 11:25:32:153 GMT+0530 (India Standard Time) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 3760
-Tue Aug 06 2024 11:25:32:253 GMT+0530 (India Standard Time) -- [SUCCESS] You can now access your local server(s) in our remote browser
+Fri Aug 09 2024 08:22:18:561 GMT+0530 (India Standard Time) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 11024
+Fri Aug 09 2024 08:22:18:674 GMT+0530 (India Standard Time) -- [SUCCESS] You can now access your local server(s) in our remote browser
 
-Tue Aug 06 2024 11:25:32:411 GMT+0530 (India Standard Time) -- Press Ctrl-C to exit
+Fri Aug 09 2024 08:22:18:752 GMT+0530 (India Standard Time) -- Press Ctrl-C to exit
 
 
-Tue Aug 06 2024 11:25:32:956 GMT+0530 (India Standard Time) -- Starting configuration console on http://localhost:45454
-
-Tue Aug 06 2024 11:31:04:423 GMT+0530 (India Standard Time) -- [ERROR] Another instance of BrowserStack Binary is running with on your system with PID: 3760
-Tue Aug 06 2024 11:31:04:423 GMT+0530 (India Standard Time) -- [ERROR] Please close it and try again
-Tue Aug 06 2024 11:31:04:424 GMT+0530 (India Standard Time) -- [ERROR] SYS_CONFLICT:1001 https://browserstack.com/docs/local-testing/binary/errors/1001
-Tue Aug 06 2024 11:31:04:424 GMT+0530 (India Standard Time) -- You can learn more about BrowserStack Binary flags by running BrowserStackLocal.exe --help
+Fri Aug 09 2024 08:22:20:189 GMT+0530 (India Standard Time) -- Starting configuration console on http://localhost:45454

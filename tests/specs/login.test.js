@@ -1,7 +1,6 @@
 import { $ } from '@wdio/globals'
 import { expect } from '@wdio/globals';
 import { Given, When, Then } from '@wdio/cucumber-framework';
-
 import menuPage from '../pageobjects/menu.page.js';
 import loginPage from '../pageobjects/login.page.js';
 import loginMessagePage from '../pageobjects/loginMessage.page.js';
@@ -21,8 +20,6 @@ When(/^User should be login with (.*) and (.*)$/, async (userId, password) => {
 
  Then(/^Expected replay should be (.*)$/, async(expectedReplay) => {
 
-    // await browser.pause(WAIT_TIMEOUT);
-   
 	if (await loginMessagePage.userIdError.isDisplayed())
     {
         await loginMessagePage.userIdError.waitForDisplayed({ timeout: WAIT_TIMEOUT});
@@ -51,10 +48,6 @@ When(/^User should be login with (.*) and (.*)$/, async (userId, password) => {
         await loginMessagePage.shopingButton.click();
         await menuPage.handleMenuTab();
         await menuPage.handleLogoutMenuOption();
-        // const isLoggedOutClick = await logoutPage.handlelLogout();
-        // await expect(isLoggedOutClick).toEqual(true);
-        // await logoutPage.loggedOutMessage.waitForEnabled({ timeout: WAIT_TIMEOUT});
-        // await expect(logoutPage.loggedOutMessage).toBeDisplayed();
     }
     
 });
