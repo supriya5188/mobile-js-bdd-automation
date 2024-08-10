@@ -5,6 +5,7 @@ const PASS_ERROR = '//android.view.ViewGroup[@content-desc="Password-error-messa
 const WRONG_CREDENTIALS_ERROR = '//android.view.ViewGroup[@content-desc="generic-error-message"]/android.widget.TextView';
 const SHOPING_BUTTON = '~Go Shopping button';
 
+
 class verificationMessagePage {    
     get userIdError() {
         return $(USER_ID_ERROR);

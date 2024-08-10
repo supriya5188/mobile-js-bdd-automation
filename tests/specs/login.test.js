@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import { expect } from '@wdio/globals';
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import menuPage from '../pageobjects/menu.page.js';

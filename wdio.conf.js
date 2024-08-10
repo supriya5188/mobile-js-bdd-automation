@@ -44,7 +44,8 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        `${process.cwd()}/tests/featureFiles/*.feature`
+        `${process.cwd()}/tests/featureFiles/login.feature`,
+        `${process.cwd()}/tests/featureFiles/cartSort.feature`
     ],
     // Patterns to exclude.
     exclude: [
@@ -181,7 +182,10 @@ export const config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: [`${process.cwd()}/tests/specs/*.js`],
+        require: [
+          `${process.cwd()}/tests/specs/login.test.js`,
+          `${process.cwd()}/tests/specs/cart.test.js`
+        ],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
